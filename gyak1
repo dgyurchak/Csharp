@@ -1,0 +1,126 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Xml.Schema;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("HelloWorld");
+            //string s = Console.ReadLine();
+            //Console.WriteLine(s);
+
+            //while(s != null)
+            //{
+            //    Console.WriteLine(s + 2);
+            //    Console.WriteLine(Convert.ToInt32(s) + 2);
+            //    Console.WriteLine(int.Parse(s) + 2);
+            //    s = Console.ReadLine();
+            //}
+
+            //int n;
+            //while (s != null)
+            //{
+            //    if (int.TryParse(s, out n))     //ha sikerult a konverzio akkor az s int-re  
+            //                                    //alakitott erteke az n ben tarolodik
+            //    {
+            //        Console.WriteLine(n + 2);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("A konverzio  nem sikerult");
+            //    }
+            //    s = Console.ReadLine();
+            //}
+
+            //string s = Console.ReadLine();
+            //while (s != null)
+            //{
+            //    if (s.Length < 10)
+            //    {
+            //        Console.WriteLine("Rovid");
+            //    }
+            //    else if (s.Length < 20)
+            //    {
+            //        Console.WriteLine(s.Substring(9));      //9. karakter utan irja ki a stringet
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Hosszu");
+            //    }
+            //    s = Console.ReadLine();
+            //}
+
+            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+
+            //double n;
+            //double num;
+            //double sum = 0;
+            //double res;
+            //n = Convert.ToDouble(Console.ReadLine());
+            //for(int i = 0; i < n; i++)
+            //{
+            //    num = Convert.ToDouble(Console.ReadLine());
+            //    sum += num;
+            //}
+            //res = sum / n;
+            //Console.WriteLine(String.Format("{0:.00}", res));
+
+            //string[] t = Console.ReadLine().Split(' ');
+            //Console.WriteLine(String.Join(", ", t));
+
+            //string s = Console.ReadLine();
+            //int[] it = s.Split(' ').Select(a => Convert.ToInt32(a)).ToArray();
+            //foreach(int item in it)
+            //{
+            //    Console.WriteLine(item + 4);
+            //}
+
+            //int n;        //legnagyobb szam a sorbol
+            //int num = 1;
+            //int a = 0;
+            //n = Convert.ToInt32(Console.ReadLine());
+            //int[] t;
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    t = Console.ReadLine().Split(' ').Select(b => Convert.ToInt32(b)).ToArray();
+            //    a = t[0];
+            //    for(int j = 0; j < t.Length; j++)
+            //    {
+            //        if(t[j] > a)
+            //        {
+            //            a = t[j];
+            //        }
+            //    }
+            //    Console.WriteLine("A maximum: " + a);
+            //}
+
+            int a = Convert.ToInt32(Console.ReadLine());        //legnagyobb kozos oszto
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = a; i != 0; i--)
+            {
+                if (a % i == 0 && b % i == 0)
+                {
+                    Console.WriteLine(i);
+                    break;
+                }
+            }
+
+            int i;
+            for (i = a; a % i != 0 || b % i != 0; i++) ;        //rovidebb valtozat
+            Console.WriteLine(i);
+
+
+        }
+    }
+}
