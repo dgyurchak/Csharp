@@ -1,0 +1,128 @@
+using System;
+using System.Linq;
+
+namespace gyak4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int huf = 25;
+
+            //string s;
+
+            //switch(s = Console.ReadLine())
+            //{
+            //    case "USD":
+            //        Console.WriteLine(huf / 310);
+            //        break;
+            //    case "EUR":
+            //        Console.WriteLine(huf / 360);
+            //        break;
+            //}
+
+            //Console.WriteLine(Program.sumNAndM(1, 5));
+
+            /* OSZTOK*/
+            //int n;
+            //string s = Console.ReadLine();
+            //while(s != null)
+            //{
+            //    n = Convert.ToInt32(s);
+            //    Console.Write(n + ": ");
+            //    for (int i = 1; i <= n; i++)
+            //    {
+            //        if(n % i == 0)
+            //        {
+            //            Console.Write(" " + i);
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+            //s = Console.ReadLine();
+
+
+            //    /* MINIMUMOK ES MAXIMUMOK SZAMA*/
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //int num;
+            ////int[,] t = new int[n, 2];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string s = Console.ReadLine();
+            //    int[] t = s.Split(' ').Select(a => Convert.ToInt32(a)).ToArray();
+            //    int min = t[0];
+            //    int max = t[0];
+            //    int minDb = 1;
+            //    int maxDb = 1;
+            //    for (int j = 1; j < t.Length; j++)
+            //    {
+            //        if (t[j] == min)
+            //        {
+            //            minDb++;
+            //        }
+            //        if (t[j] == max)
+            //        {
+            //            maxDb++;
+            //        }
+            //        if(t[j] < min)
+            //        {
+            //            min = t[j];
+            //            minDb = 1;
+            //        }
+            //        if(t[j] > max)
+            //        {
+            //            max = t[j];
+            //            maxDb = 1;
+            //        }
+            //    }
+            //    Console.WriteLine(minDb + " " + maxDb);
+            //}
+
+
+            //            /*RESZSZO*/
+            //    string word = Console.ReadLine();
+            //    string s;
+            //    while (s != null)
+            //    {
+            //        int db = 0;
+            //        for (int i = 0; i <= s.Length - word.Length; i++)
+            //        {
+            //            if (s.Substring(i, word.Length) == word)
+            //            {
+            //                db++;
+            //            }
+            //        }
+            //        Console.WriteLine(db);
+            //        s = Console.ReadLine();
+
+            //    }
+
+                    /*TURAZOK*/
+            string s = Console.ReadLine();
+           
+            while (s != null)
+            {
+                string[] t = s.Split(',');
+                int sum = 0;
+                foreach (string item in t)
+                {
+                    string[] t2 = item.Split(':');
+                    sum += Convert.ToInt32(t2);
+                }
+                Console.WriteLine(t.Length + " " + sum);
+                s = Console.ReadLine();
+            }
+        }
+
+        //public static int sumNAndM(int n, int m)
+        //{
+        //    int sum = n;
+        //    if (n < m)
+        //    {
+        //        n++;
+        //        sum += sumNAndM(n, m);
+        //    }
+        //    return sum;
+        //}
+    }
+}
