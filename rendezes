@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace gyakszii
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Person p = new Person("Teszt Elek", 185, true);
+            ////Person.Male = true;
+            //Console.WriteLine(p);
+
+            int[] i = { 3, 5, 1, 8, 2, 7, 9 };
+            Console.WriteLine(String.Join(", ", i));
+            Array.Sort(i);
+            Console.WriteLine(String.Join(", ", i));
+
+            int Order(int x, int y)
+            {
+                return y.CompareTo(x);
+            }
+
+            Array.Sort(i, Order);
+            Console.WriteLine(String.Join(", ", i));
+
+        }
+    }
+}
