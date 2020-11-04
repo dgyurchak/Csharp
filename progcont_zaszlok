@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace gyakszii
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IDictionary<string, List<string>> dict = new SortedDictionary<string, List<string>>();
+            int n = Convert.ToInt32(Console.ReadLine());
+            string[] data1, data2;
+
+            for (int i = 0; i < n; i++)
+            {
+                data1 = Console.ReadLine().Split(':');
+                data2 = data1[1].Split(',');
+                foreach (string item in data2)
+                {
+                    if(dict.ContainsKey(item))
+                    {
+                        dict[item].Add(data1[0]);
+                    }
+                    else
+                    {
+                        List<string> value = new List<string>();
+                        value.Add(data1[0]);
+                        dict[item] = value;
+                    }
+                }
+            }
+
+            string line;
+            while ((line = Console.ReadLine()) != null)
+            {
+                if (dict.ContainsKey(line))
+                {
+                    dict[line].OrderByDescending(k => k.);
+                    Console.WriteLine(line + ":" + String.Join(",", dict[line]));
+                }
+                else
+                {
+                    Console.WriteLine(line + ":");
+                }
+            }
+
+
+
+        }
+    }
+}
